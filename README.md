@@ -2,13 +2,14 @@
 <h1 align="center">Hi 👋, I'm Andrea Cordón Barrionuevo</h1>
 <h3 align="center">a Web application development technician.</h3>
 
+<h3 align="left">Connect with me:</h3>
 - 🌱 I’m currently studying **Development & Design of Web Applications**
 
 - ✨ GITHUB: [andrea25cb](andrea25cb)
 
 - 📩 MAIL: **andrea25cb@gmail.com**
 
-<h3 align="left">Connect with me:</h3>
+
 <p align="left">
 </p>
 
