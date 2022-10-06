@@ -1,6 +1,6 @@
 # 2DAW
-<h1 align="center">Hi 👋, I'm Andrea Cordón Barrionuevo</h1>
-<h3 align="center">a Web application development technician.</h3>
+<h1 align="center"> Andrea Cordón Barrionuevo</h1>
+<h3 align="center">I'm a Web application development technician.</h3>
 
 - 🌱 I’m currently studying **Development & Design of Web Applications**
 
