@@ -24,7 +24,13 @@
 
 |<h4>ACTIVIDAD 5: Práctica servidor web<h4>|
 | :- |
-|<p>Para instalar Python, iremos a su página oficial, y descargamos la última actualización.</p><p>![](Aspose.Words.46a3004b-34cb-41c2-ba77-8d43e9228489.001.png)</p><p></p><p>Ejecuta al menos dos de los ejemplos mostrados con anterioridad.</p><p></p><p>**EJEMPLO1: http.server**</p><p>Una vez instalado Python; Para mostrar el servidor web, abriremos CMD (Símbolo del Sistema), e introduciremos el siguiente comando para acceder al servidor</p><p>python -m http.server 8000</p><p></p><p>Nos pedirá acceso, se lo concedemos:</p><p>![](Aspose.Words.46a3004b-34cb-41c2-ba77-8d43e9228489.002.png)</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p>Ahora podremos acceder al servidor, escribimos en el buscador para hacerlo:</p><p>`	`localhost:8000</p><p>Nos saldrá esto:</p><p>![](Aspose.Words.46a3004b-34cb-41c2-ba77-8d43e9228489.003.png)</p><p></p><p>Hecho esto en el CMD, nos aparecerán las actualizaciones del servidor:</p><p>![](Aspose.Words.46a3004b-34cb-41c2-ba77-8d43e9228489.004.png)</p><p></p><p>**EJEMPLO 2:**</p><p></p>|
+|<p>Para instalar Python, iremos a su página oficial, y descargamos la última actualización.</p><p>![](Aspose.Words.46a3004b-34cb-41c2-ba77-8d43e9228489.001.png)</p><p></p><p>Ejecuta al menos dos de los ejemplos mostrados con anterioridad.</p><p></p><p>**EJEMPLO1: http.server**</p><p>Una vez instalado Python; Para mostrar el servidor web, abriremos CMD (Símbolo del Sistema), e introduciremos el siguiente comando para acceder al servidor</p><p>python -m http.server 8000</p><p></p><p>Nos pedirá acceso, se lo concedemos:</p><p>![](Aspose.Words.46a3004b-34cb-41c2-ba77-8d43e9228489.002.png)</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p>Ahora podremos acceder al servidor, escribimos en el buscador para hacerlo:</p><p>`	`localhost:8000</p><p>Nos saldrá esto:</p><p>![](Aspose.Words.46a3004b-34cb-41c2-ba77-8d43e9228489.003.png)</p><p></p><p>
+
+Hecho esto en el CMD, nos aparecerán las actualizaciones del servidor:
+
+</p><p><img src="G:\Mi unidad\2ºDAW\Despliegue de Aplicaciones Web\Tema 0" alt="JuveR" width="300px">
+
+</p><p></p><p>**EJEMPLO 2:**</p><p></p>|
 ||
 
 |<p></p><p>**Tema 1 - Nombre tema 1**</p>|
