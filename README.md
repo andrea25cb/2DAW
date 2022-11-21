@@ -15,6 +15,6 @@
 
 |Ejercicio 2 |Trabajando con scripts|
 | :- | :- |
-
+|Ejercicio 2 |Trabajando con scripts|
 |…|…|
 
