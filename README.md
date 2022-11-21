@@ -11,8 +11,7 @@
 
 <h1>TEMA 1. SERVIDORES WEB</h1>
 
-
-|Ejercicio 2 |Trabajando con scripts|
+|[Ejercicio 1](Tema1/ejercicio1.md)|Trabajando con scripts|
 | :- | :- |
 
 
