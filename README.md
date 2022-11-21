@@ -3,7 +3,7 @@
 <p align="left">
 </p>
 
-|<p></p><p>**TEMA 0. INTRODUCCIÓN**</p>|
+<h1>**TEMA 0. INTRODUCCIÓN**</h1>
 | :- |
 
 |Ejercicio 1|DFSFD|
@@ -12,7 +12,7 @@
 |…|…|
 
 
-|<p></p><p>**TEMA 1. SERVIDORES WEB**</p>|
+<h1>**TEMA 1. SERVIDORES WEB**</h1>
 | :- |
 
 |Actividad |Trabajando con scripts|
