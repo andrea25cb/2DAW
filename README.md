@@ -13,6 +13,3 @@
 |Ejercicio 2|Breve descripción 0.2|
 |…|…|
 
-|<p></p><p></p><p></p>|
-| :- |
-
