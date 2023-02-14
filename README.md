@@ -15,8 +15,8 @@
 | :- | :- |
 
 
-<h1>TEMA 2. DNS</h1>
-
+## Tema 2 - DNS
+|Ejercicios|Enunciado|
 |----------|-----------|
 |[Ejercicio1](Tema2/ej1.md)|¿Qué es TLD? ¿Cómo se clasifican los dominios de nivel superior?, Pon algunos ejemplos.|
 |[Ejercicio2](Tema2/ej2.md)|¿Qué es FQDN?, Pon algún ejemplo de FQDN|
