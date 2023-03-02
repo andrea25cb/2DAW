@@ -11,9 +11,11 @@
 
 <h1>TEMA 1. SERVIDORES WEB</h1>
 
+|Ejercicios|Enunciado|
+|----------|-----------|
 |[Ejercicio 1](Tema1/ejercicio1.md)|Trabajando con scripts|
 |[Proyecto](Tema1/ejercicio1.md)|Servidor web|
-| :- | :- |
+
 
 
 <h1>TEMA 2. DNS</h1>
