@@ -26,3 +26,7 @@ https://docs.docker.com/get-started/part2/
 
 ### 5. Publícalo
 
+
+Nota: Para publicar una imagen debes conectar previamente con dockerhub, tal como se muestra en el siguiente artículo:
+https://www.thegeekdiary.com/how-to-build-and-push-docker-image-to-the-docker-hub-repository/
+
