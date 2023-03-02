@@ -37,4 +37,4 @@
 |[Ejercicio 2](Tema5/ej2.md)|Llevar a cabo la práctica descrita en el primer y segundo artículo|
 |[Ejercicio 3](Tema5/ej3.md)|Descarga la imagen de ubuntu, Descarga la imagen de hello-world, Descarga la imagen nginx, etc|
 |[Ejercicio 4](Tema5/ej4.md)|Módulo tres “Almacenamiento y redes Docker": al menos tres de los ejemplos|
-|[Ejercicio 5](Tema5/ej5.md)|módulo cuatro “Docker-compose”: al menos tres de los ejemplos|
+|[Ejercicio 5](Tema5/ej5.md)|Módulo cuatro “Docker-compose”: al menos tres de los ejemplos|
