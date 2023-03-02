@@ -8,7 +8,6 @@ https://github.com/josedom24/curso_docker_ies
 Lleva a cabo al menos tres de los ejemplos mostrados en el módulo y documentalo en tu repositorio incluyendo capturas de pantalla.
 
 ## Ejemplo 1: Despliegue de la aplicación Guestbook
-# Ejemplo 1: Despliegue de la aplicación Guestbook
 
 En este ejemplo vamos a desplegar una aplicación web que requiere de dos servicios (servicio web y servicio de base de datos) para su ejecución. La aplicación se llama GuestBook y necesita los dos siguientes servicios:
 
@@ -48,9 +47,7 @@ Algunas observaciones:
 
 ---
 
-
 ## Ejemplo 2: Despliegue de la aplicación Temperaturas
-# Ejemplo 2: Despliegue de la aplicación Temperaturas
 
 Vamos a hacer un despliegue completo de una aplicación llamada Temperaturas. Esta aplicación nos permite consultar la temperatura mínima y máxima de todos los municipios de España. Esta aplicación está formada por dos microservicios:
 
@@ -84,7 +81,6 @@ Algunas observaciones:
 ---
 
 ## Ejemplo 3: Despliegue de Wordpress + mariadb
-# Ejemplo 3: Despliegue de Wordpress + mariadb
 
 Para la instalación de WordPress necesitamos dos contenedores: la base de datos (imagen `mariadb`) y el servidor web con la aplicación (imagen `wordpress`). Los dos contenedores tienen que estar en la misma red y deben tener acceso por nombres (resolución DNS) ya que de principio no sabemos que ip va a coger cada contenedor. Por lo tanto vamos a crear los contenedores en la misma red:
 
