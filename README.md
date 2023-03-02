@@ -30,7 +30,7 @@
 
 <h1>TEMA 5. DOCKER</h1>
 
-|Ejercicios|Enunciado|
+|Ejercicios  |Enunciado|
 |----------|-----------|
 |[Ejercicio 0](Tema5/ej0.md)|Conceptos básicos sobre Docker, Imagenes Docker y contenedores, Volúmenes de almacenamiento|
 |[Ejercicio 1](Tema5/ej1.md)|Instalar Docker en Ubuntu|
