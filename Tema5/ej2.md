@@ -1,10 +1,7 @@
 # Docker: ejercicio 2
 
-## Lee los siguientes artículos
-https://docs.docker.com/get-started/
-https://docs.docker.com/get-started/part2/
-
 ## Lleva a cabo la práctica descrita en el primer artículo
+https://docs.docker.com/get-started/
 ### 1. Ejecuta la imagen "hello-world":
 
 
@@ -18,6 +15,7 @@ https://docs.docker.com/get-started/part2/
 
 
 ## Lleva a cabo la práctica descrita en el segundo artículo
+https://docs.docker.com/get-started/part2/
 ### 1. Edita el fichero Dockerfile
 
 ### 2. Construye el contenedor
