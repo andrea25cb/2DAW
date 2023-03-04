@@ -86,12 +86,16 @@ Para crear el contenedor del microservicio backend, ejecutamos el siguiente coma
 docker run -d --name temperaturas-backend --network red_temperaturas iesgn/temperaturas_backend
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222932330-72360208-ed5a-49db-9038-4e2bcf6047fa.png)
+
 Con este comando, estamos ejecutando el contenedor de la imagen iesgn/temperaturas_backend, asignándole el nombre "temperaturas-backend" y conectándolo a la red "red_temperaturas".
 
 Para crear el contenedor del microservicio frontend, ejecutamos el siguiente comando:
 ```
 docker run -d -p 3000:3000 --name temperaturas-frontend --network red_temperaturas iesgn/temperaturas_frontend
 ```
+
+![image](https://user-images.githubusercontent.com/92718546/222932347-44d3fda7-74e1-40b8-95b9-8ad4585766c9.png)
 
 
 ## Ejemplo 3: Despliegue de Wordpress + mariadb
@@ -104,8 +108,8 @@ docker network create red_wp
 
 Siguiendo la documentación de la imagen [mariadb](https://hub.docker.com/_/mariadb) y la imagen [wordpress](https://hub.docker.com/_/wordpress) podemos ejecutar los siguientes comandos para crear los dos contenedores:
 
-```bash
-$ docker run -d --name servidor_mysql \
+```
+docker run -d --name servidor_mysql \
                 --network red_wp \
                 -v /opt/mysql_wp:/var/lib/mysql \
                 -e MYSQL_DATABASE=bd_wp \
@@ -114,7 +118,7 @@ $ docker run -d --name servidor_mysql \
                 -e MYSQL_ROOT_PASSWORD=asdasd \
                 mariadb
                 
-$ docker run -d --name servidor_wp \
+docker run -d --name servidor_wp \
                 --network red_wp \
                 -v /opt/wordpress:/var/www/html/wp-content \
                 -e WORDPRESS_DB_HOST=servidor_mysql \
@@ -124,11 +128,12 @@ $ docker run -d --name servidor_wp \
                 -p 80:80 \
                 wordpress
 
-$ docker ps
+docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
 5b2c5a82a524        wordpress           "docker-entrypoint.s…"   9 minutes ago       Up 9 minutes        0.0.0.0:80->80/tcp   servidor_wp
 f70f22aed3d1        mariadb             "docker-entrypoint.s…"   9 minutes ago       Up 9 minutes        3306/tcp             servidor_mysql
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222932470-e1d7c614-106e-4586-b39d-9c2aeaac8048.png)
 
 
