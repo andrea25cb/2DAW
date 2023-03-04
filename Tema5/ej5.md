@@ -5,13 +5,21 @@ https://github.com/josedom24/curso_docker_ies
 
 Lleva a cabo al menos tres de los ejemplos mostrados en el módulo y documentalo en tu repositorio incluyendo capturas de pantalla.
 
+Instalamos docker-compose: 
+
+```apt install docker-compose```
+
+![image](https://user-images.githubusercontent.com/92718546/222932965-a98ee72d-8dee-4a1c-b8ef-47cd9f30d33f.png)
+
 ## Ejemplo 1: Despliegue de la aplicación guestbook
 
 En este ejemplo vamos a desplegar con docker-compose la aplicación *guestbook*, que estudiamos en el módulo de redes: [Ejemplo 1: Despliegue de la aplicación Guestbook](../modulo3/guestbook.md).
 
-Puedes encontrar el fichero `docker-compose.yml` en en este [directorio](https://github.com/josedom24/curso_docker_ies/tree/main/ejemplos/modulo4/ejemplo1) del repositorio. 
+```cd /examples/guestbook```
 
-En el fichero `docker-compose.yml` vamos a definir el escenario. El programa `docker-compose` se debe ejecutar en el directorio donde este ese fichero. 
+Necesitamos crear un archivo llamado docker-compose.yml con la siguiente configuración:
+
+```sudo nano docker-compose.yml ```
 
 ```yaml
 version: '3.1'
@@ -34,17 +42,26 @@ Para crear el escenario:
 docker-compose up -d
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222933186-b439e0b6-083d-4377-8171-f067420d60d8.png)
+
+
 Para listar los contenedores:
 
 ```
 docker-compose ps     
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222933197-8fda57b4-c4fc-4111-b113-435202d59e72.png)
+
+
 Para parar los contenedores:
 
 ```
-$ docker-compose stop 
+docker-compose stop 
 ```
+
+![image](https://user-images.githubusercontent.com/92718546/222933220-a9fd114f-db02-4527-8635-dc22fb743d3a.png)
+
 
 Para eliminar el escenario:
 
@@ -52,13 +69,13 @@ Para eliminar el escenario:
 docker-compose down
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222933258-8e166971-4bad-4b3b-8321-a7c57958751d.png)
+
 ---
 
 ## Ejemplo 2: Despliegue de la aplicación Temperaturas
 
 En este ejemplo vamos a desplegar con docker-compose la aplicación *Temperaturas*, que estudiamos en el módulo de redes: [Ejemplo 2: Despliegue de la aplicación Temperaturas](../modulo3/temperaturas.md).
-
-Puedes encontrar el fichero `docker-compose.yml` en en este [directorio](https://github.com/josedom24/curso_docker_ies/tree/main/ejemplos/modulo4/ejemplo2) del repositorio. 
 
 
 En este caso el fichero `docker-compose.yml` puede tener esta forma:
