@@ -97,6 +97,7 @@ services:
     restart: always
 ```
 
+
 Para crear el escenario:
 
 ```
@@ -104,11 +105,17 @@ docker-compose up -d
 
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222933654-1e6d0ec0-35e2-4521-bda8-48925f591512.png)
+
+
 Para listar los contenedores:
 
 ```
 docker-compose ps
 ```
+
+![image](https://user-images.githubusercontent.com/92718546/222933646-7de79a8f-aeb1-4af1-8e4e-c375908cfd21.png)
+
 
 ---
 
@@ -171,8 +178,7 @@ Para parar los contenedores:
 
 ```
 docker-compose stop 
-Stopping servidor_wp    ... done
-Stopping servidor_mysql ... done
+
 ```
 
 Para borrar los contenedores:
@@ -219,5 +225,3 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
 ```
-
----
