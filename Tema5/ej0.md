@@ -4,9 +4,6 @@
 * Imagenes Docker y contenedores
 * Volúmenes de almacenamiento
 
-## Ejercicios:
-
-# 1:
 ## Imagenes Docker y contenedores
 Primero deberemos instalar docker con ```apt install docker.io```
 
