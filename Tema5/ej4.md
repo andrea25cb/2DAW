@@ -13,32 +13,30 @@ En este ejemplo vamos a desplegar una aplicación web que requiere de dos servic
 * La aplicación guestbook es una aplicación web desarrollada en python que es servida por el puerto 5000/tcp. Utilizaremos la imagen `iesgn/guestbook`.
 * Esta aplicación guarda la información en una base de datos no relacional redis, que utiliza el puerto 6379/tcp para conectarnos. Usaremos la imagen `redis`.
 
-```git clone https://github.com/kubernetes/examples.git```
+Descargo la imagen iesgn/guestbook y redis desde Docker Hub utilizando los siguientes comandos:
 
+```
+docker pull iesgn/guestbook
+docker pull redis
+```
 
 Accedo al directorio de la aplicación Guestbook:
 ```
 cd examples/guestbook/
 ```
+Creo un contenedor Docker para la imagen redis utilizando el siguiente comando:
 
-Creo una imagen Docker para la aplicación Guestbook utilizando el siguiente comando:
 ```
-docker build -t guestbook .
-```
-Creo un contenedor Docker para la aplicación Guestbook utilizando el siguiente comando:
-```
-docker run -d -p 80:80 guestbook
+docker run -d --name redis-container -p 6379:6379 redis
 ```
 
-**Volúmenes**
+Este comando ejecuta un contenedor Docker en segundo plano (-d) utilizando la imagen redis. El contenedor se expone en el puerto 6379 del host (-p 6379:6379), lo que significa que la base de datos no relacional Redis estará disponible en localhost:6379.
 
-Si estudiamos la documentación de la imagen redis en [Docker Hub](https://hub.docker.com/_/redis), para que la información de la base de datos se guarde en un directorio `/data` del contenedor hay que ejecutar el proceso `redis-server` con los argumentos `--appendonly yes`.
 
-**Redes**
+Creo un contenedor Docker para la imagen iesgn/guestbook utilizando el siguiente comando:
+```docker run -d --name guestbook-container -p 5000:5000 --link redis-container:redis iesgn/guestbook```
 
-La aplicación guestbook por defecto utiliza el nombre `redis` para conectarse a la base de datos, por lo tanto debemos nombrar al contenedor redis con ese nombre para que tengamos una resolución de nombres adecuada.
-
-Los dos contenedores tienen que estar en la misma red y deben tener acceso por nombres (resolución DNS) ya que de principio no sabemos que ip va a coger cada contenedor. Por lo tanto vamos a crear los contenedores en la misma red:
+Vamos a crear los contenedores en la misma red:
 
 ```
 docker network create red_guestbook
