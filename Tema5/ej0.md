@@ -12,6 +12,7 @@ Primero deberemos instalar docker con ```apt install docker.io```
 
 Instalamos alpine con:
 ```docker image pull alpine```
+
 ![image](https://user-images.githubusercontent.com/92718546/222923653-228e0bf5-0416-41a2-a273-90570fd8a88f.png)
 
 El comando pull obtiene la imagen alpina del registro de Docker y la guarda en nuestro sistema. En este caso el registro es Docker Hub.
@@ -19,6 +20,7 @@ El comando pull obtiene la imagen alpina del registro de Docker y la guarda en n
 Para ver las imagenes que tenemos haremos:
 
 ```docker image ls```
+
 ![image](https://user-images.githubusercontent.com/92718546/222923728-3a5cf4cf-725f-4aaa-bddd-853d6a7f4c9c.png)
 
 Crearemos un contenedor docker basandonos en esa imagen:
@@ -36,6 +38,7 @@ Podemos salir con ```exit```
 
 Para ver si los contenedores que hemos ejecutado:
 ```docker container ls -a```
+
 ![image](https://user-images.githubusercontent.com/92718546/222924195-346b0e48-19e9-4a9e-966c-f2dc24a2fa35.png)
 
 Cada ejecucion es un contenedor aislado. Cada contenedor tiene un sistema de archivos independiente y se ejecuta en un espacio de nombres diferente; por defecto, un contenedor no tiene forma de interactuar con otros contenedores, incluso con los de la misma imagen.
@@ -46,6 +49,7 @@ Entramos otra vez en el shell y escribiremos:
 
  ls
 ```
+
 ![image](https://user-images.githubusercontent.com/92718546/222924339-2ae9df3f-b65f-432b-9927-7041e71e1205.png)
 
 Como vemos en la imagen, se ha creado un nuevo archivo "hello.txt" con las palabras "hello world" dentro.
@@ -55,6 +59,7 @@ Salimos con exit.
 Para ejecutar un contenedor necesitamos su ID, que podemos ver con ```docker container ls -a``` en la primera columna.
 
 Para ver qué contenedores se están ejecutando haremos ```docler container ls```:
+
 ![image](https://user-images.githubusercontent.com/92718546/222924664-f815e15d-4a67-4933-8910-9db24d068628.png)
 
  Como vemos, se está ejecutando un contenedor.
@@ -80,12 +85,14 @@ comprobamos que funciona:
 Para crear una imagen tenemos que hacer "commit" en el contenedor:
 ``` docker container commit CONTAINER_ID ```
 Vemos las imagenes con ```docker image ls```:
+
 ![image](https://user-images.githubusercontent.com/92718546/222925264-6bfd881a-37ff-4fc7-8482-290ea03d4c7b.png)
 Cambiaremos el nombre de la etiqueta, por ejemplo le pondré 'andrea':
 ```
 docker image tag <IMAGE_ID> andrea
 docker image ls
 ```
+
 ![image](https://user-images.githubusercontent.com/92718546/222925359-d317d15c-eeb7-444e-a9e3-8cff49bb1bc3.png)
 
 Ahora ejecutaremos un contenedor basado en la imagen andrea recién creada:
