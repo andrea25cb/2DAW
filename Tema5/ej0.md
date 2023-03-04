@@ -145,17 +145,36 @@ Inicializar el modo Docker Swarm es fácil. En la primera ventana de terminal et
 Para mostrar los miembros de Swarm:
 ```docker node ls ```
 
+![image](https://user-images.githubusercontent.com/92718546/222927203-ceebd184-1aa9-4e39-bd7e-a7cc1edcd0ec.png)
+
+
 ### Clonar la aplicación de votación:
 Recuperaremos el código de la aplicación de votación de muestra de Github:
 ```
 git clone https://github.com/docker/example-voting-app
 cd example-voting-app
 ```
-![image](https://user-images.githubusercontent.com/92718546/222927251-b6339b36-bed8-4931-8bf2-201861f08366.png)
+
 ![image](https://user-images.githubusercontent.com/92718546/222927291-f7a264c9-0a8d-4890-a3ad-0fbb9a8bfe0a.png)
 
+### Deploy a Stack
+Una pila es un grupo de servicios que se implementan juntos: múltiples componentes en contenedores de una aplicación que se ejecutan en instancias separadas. 
+Al igual que con Dockerfiles y los archivos Compose, el archivo que define una pila es un archivo de texto sin formato que es fácil de editar y rastrear. En nuestro ejercicio, hay un archivo llamado docker-stack.ymlen la carpeta actual que se usará para implementar la aplicación de votación como una pila. Para investigar el archivo docker-stack.yml:
+``` 
+cat docker-stack.yml
+```
+![image](https://user-images.githubusercontent.com/92718546/222927417-2f387dfb-e762-45f8-8ce8-9d33b993c1eb.png)
 
-![image](https://user-images.githubusercontent.com/92718546/222927203-ceebd184-1aa9-4e39-bd7e-a7cc1edcd0ec.png)
+Haremos ```docker stack deploy --compose-file=docker-stack.yml voting_stack ``` para implementarla
+
+![image](https://user-images.githubusercontent.com/92718546/222927495-918bfdd6-7443-4dd0-85b1-10084b134a26.png)
+
+Comprobamos con ```docker stack ls```:
+
+![image](https://user-images.githubusercontent.com/92718546/222927533-c0ef9437-79ff-4c5d-ab81-f91256c90cdd.png)
+
+Podemos obtener detalles sobre cada servicio dentro de la pila con:
+
+```docker stack services voting_stack```
 
 
-https://training.play-with-docker.com/ops-s1-images/
