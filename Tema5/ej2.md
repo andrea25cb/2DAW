@@ -25,40 +25,51 @@ Esto proporcionará una lista de todas las imágenes Docker que se encuentran en
 ## Lleva a cabo la práctica descrita en el segundo artículo
 https://docs.docker.com/get-started/part2/
 
+Clonamos para obtener la app:
+```git clone https://github.com/docker/getting-started.git```
+
+
 ### 1. Edita el fichero Dockerfile
-```sudo nano Dockerfile```
+```
+touch Dockerfile
+sudo nano Dockerfile
+```
 
 Dentro escribimos:
 
 ```
-FROM node:12-alpine
+# syntax=docker/dockerfile:1
+   
+FROM node:18-alpine
 WORKDIR /app
 COPY . .
-RUN apk update && apk add --no-cache yarn
-RUN rm /usr/local/bin/yarn
-RUN npm install -g yarn
 RUN yarn install --production
 CMD ["node", "src/index.js"]
+EXPOSE 3000
 
 ```
+![image](https://user-images.githubusercontent.com/92718546/222930198-780eb282-12bb-4a8a-88af-1afcd5918def.png)
 
 Este archivo especifica una imagen base de Node.js, establece un directorio de trabajo en "/app", copia todo el contenido del directorio actual al directorio "/app" dentro del contenedor, instala las dependencias necesarias y finalmente define un comando para ejecutar el archivo "index.js" dentro de la carpeta "src".
 
 ### 2. Construye el contenedor
-```docker build -t my-node-app .```
+```docker build -t getting-started .```
 
-Esto construirá la imagen Docker con el nombre "my-node-app" y la etiqueta "latest" en el sistema a partir del archivo Dockerfile en el directorio actual.
+Esto construirá la imagen Docker con el nombre "getting-started" y la etiqueta "latest" en el sistema a partir del archivo Dockerfile en el directorio actual.
+![image](https://user-images.githubusercontent.com/92718546/222930325-0a4ce038-74db-4221-bc04-577b764d3c5e.png)
 
-![image](https://user-images.githubusercontent.com/92718546/222929226-64642bf1-3e69-4d5f-9696-a14de5b60cd3.png)
 
 ### 3. Ejecútalo
 
 ```
-docker run -p 3000:3000 my-node-app
+docker run -p 3000:3000 getting-started
 ```
 
-Esto ejecutará el contenedor "my-node-app" en segundo plano y asignará el puerto 3000 de la máquina al puerto 3000 del contenedor. 
-Podremos acceder en http://localhost:3000/.
+Esto ejecutará el contenedor "getting-started" en segundo plano y asignará el puerto 3000 de la máquina al puerto 3000 del contenedor. 
+Podremos acceder en http://localhost:3000/
+
+![image](https://user-images.githubusercontent.com/92718546/222930349-43903c69-b0c5-43df-8fde-88d4a3b5008c.png)
+
 
 ### 4. Create una cuenta en hub.docker.com
 ![image](https://user-images.githubusercontent.com/92718546/222927989-403d61de-6dfb-4c4b-ab91-79519391ecfa.png)
@@ -72,11 +83,16 @@ Hemos iniciado sesión con exito.
 
 Etiquetamos la imagen a publicar con el nombre de usuario de Docker Hub y un nombre para la imagen:
 
-```docker tag my-node-app andrea25cb/my-node-app:latest```
+```docker tag getting-started andrea25cb/getting-started```
 
 Publicamos la imagen etiquetada en Docker Hub:
-```docker push andrea25cb/my-node-app:latest```
+
+```docker push andrea25cb/getting-started:latest```
+
+![image](https://user-images.githubusercontent.com/92718546/222930437-1a148f04-fecc-4c7a-bee0-d2be3a0437cd.png)
 
 Una vez que se haya completado, la imagen estará disponible públicamente en Docker Hub:
+
+![image](https://user-images.githubusercontent.com/92718546/222930454-63e7490e-25d7-410d-ac1a-a7d2a6639e9b.png)
 
 
