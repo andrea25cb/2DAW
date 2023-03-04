@@ -20,6 +20,9 @@ docker pull iesgn/guestbook
 docker pull redis
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222931704-4a3eac30-6c96-43b0-9d3f-28b6fae965f2.png)
+
+
 Accedo al directorio de la aplicación Guestbook:
 ```
 cd examples/guestbook/
@@ -27,14 +30,18 @@ cd examples/guestbook/
 Creo un contenedor Docker para la imagen redis utilizando el siguiente comando:
 
 ```
-docker run -d --name redis-container -p 6379:6379 redis
+docker run -d --name redis-container --network guestbook-network -p 6379:6379 --network-alias redis redis
+
 ```
+
+![image](https://user-images.githubusercontent.com/92718546/222931797-ddf713e9-c55f-4c99-95cf-e3ea0afbc2e0.png)
+
 
 Este comando ejecuta un contenedor Docker en segundo plano (-d) utilizando la imagen redis. El contenedor se expone en el puerto 6379 del host (-p 6379:6379), lo que significa que la base de datos no relacional Redis estará disponible en localhost:6379.
 
 
 Creo un contenedor Docker para la imagen iesgn/guestbook utilizando el siguiente comando:
-```docker run -d --name guestbook-container -p 5000:5000 --link redis-container:redis iesgn/guestbook```
+```docker run -d --name guestbook-container --network guestbook-network -p 5000:5000 iesgn/guestbook```
 
 Vamos a crear los contenedores en la misma red:
 
