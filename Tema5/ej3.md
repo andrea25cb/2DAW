@@ -94,4 +94,5 @@ Luego podremos borrarlos:
 ```
 docker rm $(docker ps -aq)
 ```
+![image](https://user-images.githubusercontent.com/92718546/222931062-d38116d0-8198-4113-b9a1-7e0481003025.png)
 
