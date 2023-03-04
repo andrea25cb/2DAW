@@ -41,7 +41,10 @@ Este comando ejecuta un contenedor Docker en segundo plano (-d) utilizando la im
 
 
 Creo un contenedor Docker para la imagen iesgn/guestbook utilizando el siguiente comando:
-```docker run -d --name guestbook-container --network guestbook-network -p 5000:5000 iesgn/guestbook```
+
+```
+docker run -d --name guestbook-container --network guestbook-network -p 5000:5000 iesgn/guestbook
+```
 
 Vamos a crear los contenedores en la misma red:
 
@@ -58,6 +61,7 @@ docker run -d --name redis --network red_guestbook -v /opt/redis:/data redis red
 docker run -d -p 80:5000 --name guestbook --network red_guestbook iesgn/guestbook
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222932055-26a6a4fb-9ab9-4043-9bbf-becf1ad2c766.png)
 
 
 ## Ejemplo 2: Despliegue de la aplicación Temperaturas
@@ -69,20 +73,25 @@ Vamos a hacer un despliegue completo de una aplicación llamada Temperaturas. Es
 
 El microservicio `frontend` se conecta a `backend` usando el nombre `temperaturas-backend`. Por lo tanto el contenedor con el micorservicio `backend` tendrá ese nombre para disponer de una resolución de nombres adecuada en el dns.
 
-Vamos a crear una red para conectar los dos contenedores:
+Creamos una red para conectar los dos contenedores:
 
-```bash
-$ docker network create red_temperaturas
+```
+docker network create red_temperaturas
 ```
 
-Para ejecutar los contenedores:
+Ahora podemos proceder a crear los contenedores de los microservicios.
 
-```bash
-$ docker run -d --name temperaturas-backend --network red_temperaturas iesgn/temperaturas_backend
-
-$ docker run -d -p 80:3000 --name temperaturas-frontend --network red_temperaturas iesgn/temperaturas_frontend
+Para crear el contenedor del microservicio backend, ejecutamos el siguiente comando:
+```
+docker run -d --name temperaturas-backend --network red_temperaturas iesgn/temperaturas_backend
 ```
 
+Con este comando, estamos ejecutando el contenedor de la imagen iesgn/temperaturas_backend, asignándole el nombre "temperaturas-backend" y conectándolo a la red "red_temperaturas".
+
+Para crear el contenedor del microservicio frontend, ejecutamos el siguiente comando:
+```
+docker run -d -p 3000:3000 --name temperaturas-frontend --network red_temperaturas iesgn/temperaturas_frontend
+```
 
 
 ## Ejemplo 3: Despliegue de Wordpress + mariadb
