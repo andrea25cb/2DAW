@@ -7,7 +7,7 @@
 ## Ejercicios:
 
 # 1:
-### First Alpine Linux Containers:
+## Imagenes Docker y contenedores
 Primero deberemos instalar docker con ```apt install docker.io```
 
 Instalamos alpine con:
@@ -67,7 +67,7 @@ Para ver qué contenedores se están ejecutando haremos ```docler container ls``
 Ahora hemos usado el shel de ash, así que en lugar de simplemente salir como lo hizo /bin/sh antes, ash espera un comando. Podemos enviar un comando al contenedor para que se ejecute usando el comando exec, de la siguiente manera:
 ![image](https://user-images.githubusercontent.com/92718546/222924892-054b8dd2-ce33-458a-949f-6be5fe8214b2.png)
 
-# 2:
+## Imagenes Docker y contenedores
 ### Creación de imágenes a partir de un contenedor
 Empecemos ejecutando un shell interactivo en un contenedor de ubuntu: 
 ```docker container run -ti ubuntu bash```
@@ -113,8 +113,49 @@ console.log("hello from " + hostname);
 
 El archivo que acabamos de crear es el código javascript para nuestro servidor, que imprimirá un mensaje "hello".
 
-https://training.play-with-docker.com/ops-s1-hello/
 
-# 3:
+Construyo la primera imagen a partir de este Dockerfile, de nombre hello:v0.1:
+```docker image build -t hello:v0.1 .```
+
+A continuación, iniciamos un contenedor para comprobar que nuestras aplicaciones se ejecutan correctamente:
+```docker container run hello:v0.1```
+
+Las imágenes están construidas en capas.
+
+### Inspección de imágenes
+Para saber que información tiene una imagen:
+```docker image inspect alpine```
+
+Veremos las capas de las que se compone la imagen, el controlador utilizado para almacenar las capas, etc.
+
+Para obtener la lista de capas:
+```docker image inspect --format "{{ json .RootFS.Layers }}" alpine```
+
+Alpine es solo una pequeña imagen básica del sistema operativo, por lo que solo hay una capa:
+
+![image](https://user-images.githubusercontent.com/92718546/222926857-ccd52227-0a2e-486a-be17-76cc50e99c41.png)
+
+## Implementar y administrar múltiples contenedores
+Inicializar el modo Docker Swarm es fácil. En la primera ventana de terminal etiquetada como [nodo1], ingrese lo siguiente:
+```docker swarm init --advertise-addr $(hostname -i)```
+
+![image](https://user-images.githubusercontent.com/92718546/222927181-67322754-5aa6-450c-aa11-0c24d3154b7e.png)
+
+
+Para mostrar los miembros de Swarm:
+```docker node ls ```
+
+### Clonar la aplicación de votación:
+Recuperaremos el código de la aplicación de votación de muestra de Github:
+```
+git clone https://github.com/docker/example-voting-app
+cd example-voting-app
+```
+![image](https://user-images.githubusercontent.com/92718546/222927251-b6339b36-bed8-4931-8bf2-201861f08366.png)
+![image](https://user-images.githubusercontent.com/92718546/222927291-f7a264c9-0a8d-4890-a3ad-0fbb9a8bfe0a.png)
+
+
+![image](https://user-images.githubusercontent.com/92718546/222927203-ceebd184-1aa9-4e39-bd7e-a7cc1edcd0ec.png)
+
 
 https://training.play-with-docker.com/ops-s1-images/
