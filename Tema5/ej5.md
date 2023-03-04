@@ -30,40 +30,26 @@ services:
 
 Para crear el escenario:
 
-```bash
-$ docker-compose up -d
-Creating network "guestbook_default" with the default driver
-Creating guestbook ... done
-Creating redis     ... done
+```
+docker-compose up -d
 ```
 
 Para listar los contenedores:
 
-```bash
-$ docker-compose ps
-  Name                 Command               State          Ports        
--------------------------------------------------------------------------
-guestbook   python3 app.py                   Up      0.0.0.0:80->5000/tcp
-redis       docker-entrypoint.sh redis ...   Up      6379/tcp            
+```
+docker-compose ps     
 ```
 
 Para parar los contenedores:
 
-```bash
+```
 $ docker-compose stop 
-Stopping guestbook    ... done
-Stopping redis ... done
 ```
 
 Para eliminar el escenario:
 
-```bash
+```
 docker-compose down
-Stopping guestbook ... done
-Stopping redis     ... done
-Removing guestbook ... done
-Removing redis     ... done
-Removing network guestbook_default
 ```
 
 ---
@@ -96,21 +82,15 @@ services:
 
 Para crear el escenario:
 
-```bash
-$ docker-compose up -d
-Creating network "temperaturas_default" with the default driver
-Creating temperaturas-backend ... done
-Creating temperaturas-frontend ... done
+```
+docker-compose up -d
 
 ```
 
 Para listar los contenedores:
 
-```bash
-$ docker-compose ps
----------------------------------------------------------------------
-temperaturas-backend    python3 app.py   Up      5000/tcp            
-temperaturas-frontend   python3 app.py   Up      0.0.0.0:80->3000/tcp
+```
+docker-compose ps
 ```
 
 ---
@@ -160,52 +140,34 @@ volumes:
 
 Para crear el escenario:
 
-```bash
-$ docker-compose up -d
-Creating network "wp_default" with the default driver
-Creating servidor_wp    ... done
-Creating servidor_mysql ... done
+```
+docker-compose up -d
 ```
 
 Para listar los contenedores:
 
-```bash
-$ docker-compose ps
-     Name                   Command               tate         Ports       
----------------------------------------------------------------------------
-servidor_mysql   docker-entrypoint.sh mysqld      Up      306/tcp          
-servidor_wp      docker-entrypoint.sh apach ...   Up      0.0.0.0:80->80/tcp
+```
+docker-compose ps
 ```
 
 Para parar los contenedores:
 
-```bash
-$ docker-compose stop 
+```
+docker-compose stop 
 Stopping servidor_wp    ... done
 Stopping servidor_mysql ... done
 ```
 
 Para borrar los contenedores:
 
-```bash
-$ docker-compose rm
-Going to remove servidor_wp, servidor_mysql
-Are you sure? [yN] y
-Removing servidor_wp    ... done
-Removing servidor_mysql ... done
+```
+docker-compose rm
 ```
 
 Para eliminar el escenario (contenedores, red y volúmenes):
 
-```bash
-$ docker-compose down -v
-Stopping servidor_mysql ... done
-Stopping servidor_wp    ... done
-Removing servidor_mysql ... done
-Removing servidor_wp    ... done
-Removing network volumen_default
-Removing volume volumen_wordpress_data
-Removing volume volumen_mariadb_data
+```
+docker-compose down -v
 ```
 
 ### Utilizando bind-mount
