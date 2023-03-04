@@ -168,11 +168,17 @@ Para crear el escenario:
 docker-compose up -d
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222934208-8f8bde0d-9c6a-4905-9f01-cdbc8d414af0.png)
+
+
 Para listar los contenedores:
 
 ```
 docker-compose ps
 ```
+
+![image](https://user-images.githubusercontent.com/92718546/222934219-b4bfa299-bf85-4112-97ab-d0c1a69379eb.png)
+
 
 Para parar los contenedores:
 
@@ -181,11 +187,17 @@ docker-compose stop
 
 ```
 
+![image](https://user-images.githubusercontent.com/92718546/222934226-6489c1b3-935e-4207-80a7-1845146a77b9.png)
+
+
 Para borrar los contenedores:
 
 ```
 docker-compose rm
 ```
+
+![image](https://user-images.githubusercontent.com/92718546/222934230-207b42e6-8bb6-40ac-a325-58f60411bc1a.png)
+
 
 Para eliminar el escenario (contenedores, red y volúmenes):
 
@@ -193,35 +205,5 @@ Para eliminar el escenario (contenedores, red y volúmenes):
 docker-compose down -v
 ```
 
-### Utilizando bind-mount
+![image](https://user-images.githubusercontent.com/92718546/222934241-398cb154-8398-4e88-a8c1-b4d398e066f1.png)
 
-Por ejemplo para la ejecución de wordpress persistente con bind mount podríamos tener un fichero `docker-compose.yml` con el siguiente contenido:
-
-```yaml
-version: '3.1'
-services:
-  wordpress:
-    container_name: servidor_wp
-    image: wordpress
-    restart: always
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: user_wp
-      WORDPRESS_DB_PASSWORD: asdasd
-      WORDPRESS_DB_NAME: bd_wp
-    ports:
-      - 80:80
-    volumes:
-      - ./wordpress:/var/www/html/wp-content
-  db:
-    container_name: servidor_mysql
-    image: mariadb
-    restart: always
-    environment:
-      MYSQL_DATABASE: bd_wp
-      MYSQL_USER: user_wp
-      MYSQL_PASSWORD: asdasd
-      MYSQL_ROOT_PASSWORD: asdasd
-    volumes:
-      - ./mysql:/var/lib/mysql
-```
