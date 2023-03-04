@@ -77,7 +77,6 @@ docker-compose down
 
 En este ejemplo vamos a desplegar con docker-compose la aplicación *Temperaturas*, que estudiamos en el módulo de redes: [Ejemplo 2: Despliegue de la aplicación Temperaturas](../modulo3/temperaturas.md).
 
-
 En este caso el fichero `docker-compose.yml` puede tener esta forma:
 
 ```yaml
@@ -122,8 +121,6 @@ docker-compose ps
 ## Ejemplo 3: Despliegue de WordPress + Mariadb
 
 En este ejemplo vamos a desplegar con docker-compose la aplicación WordPress + MariaDB, que estudiamos en el módulo de redes: [Ejemplo 3: Despliegue de Wordpress + mariadb ](../modulo3/wordpress.md).
-
-Puedes encontrar los ficheros `docker-compose.yml` en este [directorio](https://github.com/josedom24/curso_docker_ies/tree/main/ejemplos/modulo4/ejemplo3) del repositorio. 
 
 
 ### Utilizando volúmenes docker
