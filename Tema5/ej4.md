@@ -106,7 +106,7 @@ Para la instalación de WordPress necesitamos dos contenedores: la base de datos
 docker network create red_wp
 ```
 
-Siguiendo la documentación de la imagen [mariadb](https://hub.docker.com/_/mariadb) y la imagen [wordpress](https://hub.docker.com/_/wordpress) podemos ejecutar los siguientes comandos para crear los dos contenedores:
+Siguiendo la documentación de la imagen mariadb y la imagen wordpress podemos ejecutar los siguientes comandos para crear los dos contenedores:
 
 ```
 docker run -d --name servidor_mysql \
